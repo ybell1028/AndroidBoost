@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:state_focused="true"
+    android:state_pressed="true"
+    android:drawable="@drawable/red"/>
+<item
+    android:drawable="@drawable/blue"/>
+</selector>
+    <!--어떤 상태에 따라서 drawable 같은 것들을 보여 줄 수 있다.-->
