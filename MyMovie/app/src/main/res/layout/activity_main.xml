@@ -15,6 +15,47 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <LinearLayout
+                android:id="@+id/buttonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/commentLayout"
+                android:background="@drawable/bottom_line"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/facebook_share"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/ic_facebook" />
+
+                <Button
+                    android:id="@+id/kakao_share"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/ic_kakao" />
+
+                <Button
+                    android:id="@+id/reserve_button"
+                    android:layout_width="220dp"
+                    android:layout_height="60dp"
+                    android:background="#FF3E1C"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="예매하기"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"/>
+
+            </LinearLayout>
+
             <RelativeLayout
                 android:id="@+id/commentLayout"
                 android:layout_width="match_parent"
@@ -23,10 +64,21 @@
                 android:paddingBottom="15dp"
                 android:background="@drawable/bottom_line">
 
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/commentName"
+                    android:layout_above="@+id/viewAll"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp" />
+
                 <Button
                     android:id="@+id/viewAll"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_alignBottom="@+id/commentText"
                     android:background="@drawable/viewallborder"
                     android:text="모두 보기" />
@@ -68,9 +120,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/commentName"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
                     android:text="\n\n\n\n\n\n\n\n\n\n\n"
                     android:textColor="#000000"
                     android:textSize="20sp" />
+
+
 
             </RelativeLayout>
 
@@ -168,18 +227,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text=" 군도, 백성을 구하라!\n
-양반과 탐관오리들의 착취가 극에 달했던 조선 철종 13년. 힘 없는 백성의 편이 되어
-세상을 바로잡고자 하는 의적떼인 군도(群盜), 지리산 추설이 있었다.\n\n
- 쌍칼 도치 vs 백성의 적 조윤\n
-잦은 자연재해, 기근과 관의 횡포까지 겹쳐 백성들의 삶이 날로 피폐해 져 가는 사이,
-나주 대부호의 서자로 조선 최고의 무관 출신인 조윤은 극악한 수법으로 양민들을 수탈,
-삼남지방 최고의 대부호로 성장한다. 한편 소, 돼지를 잡아 근근이 살아가던 천한 백정 돌무치는
-죽어도 잊지 못할 끔찍한 일을 당한 뒤 군도에 합류. 지리산 추설의 신 거성(新 巨星) 도치로 거듭난다.\n\n
-뭉치면 백성, 흩어지면 도적!\n
-망할 세상을 뒤집기 위해, 백성이 주인인 새 세상을 향해 도치를 필두로 한 군도는 백성의 적,
-조윤과 한 판 승부를 시작하는데..."
-                    android:textSize="15sp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/story_Gundo"
+                    android:textSize="16sp"
                     android:paddingBottom="10dp"/>
 
             </LinearLayout>
@@ -189,6 +240,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
                 android:background="@drawable/poster_background">
 
                 <TextView
@@ -198,8 +254,8 @@
                     android:layout_below="@id/genreandtime"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="22dp"
+                    android:text="0"
                     android:layout_toRightOf="@+id/thumb_up_button"
-                    android:text="17"
                     android:textColor="#FFFFFF" />
 
                 <TextView
@@ -209,8 +265,8 @@
                     android:layout_below="@id/genreandtime"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="22dp"
+                    android:text="0"
                     android:layout_toRightOf="@+id/thumb_down_button"
-                    android:text="3"
                     android:textColor="#FFFFFF" />
 
                 <Button
@@ -221,8 +277,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="15dp"
                     android:layout_toRightOf="@+id/Poster"
-                    android:background="@drawable/thumb_up"
-                    android:onClick="@drawable/" />
+                    android:background="@drawable/thumb_up" />
 
                 <Button
                     android:id="@+id/thumb_down_button"
@@ -232,8 +287,7 @@
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_toRightOf="@+id/thumb_up_button"
-                    android:background="@drawable/thumb_down"
-                    android:onClick="@drawable/" />
+                    android:background="@drawable/thumb_down" />
 
                 <ImageView
                     android:id="@+id/Poster"
@@ -345,11 +399,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/rating_name"
-                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="5dp"
                         android:numStars="5"
                         android:rating="4.1"
                         android:stepSize="0.1" />
+
+                    <TextView
+                        android:id="@+id/rating_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/ratingBar"
+                        android:layout_below="@+id/rating_name"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="2dp"
+                        android:text="8.2" />
                 </RelativeLayout>
 
                 <LinearLayout
