@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -58,6 +60,14 @@ public class MainActivity extends AppCompatActivity {
 
         thumbUpNum.setText(String.valueOf(good));
         thumbUpNum.setText(String.valueOf(bad));
+
+        ListView listView = (ListView)findViewById(R.id.listView);
+        CommentAdapter adapter = new CommentAdapter();
+        listView.setAdapter(adapter); // 리스트 뷰가 어댑터를 알기 때문에 서로 물어보면서 화면에 표시해줌
+
+    }
+
+    class CommentAdapter extends BaseAdapter{
 
 
     }

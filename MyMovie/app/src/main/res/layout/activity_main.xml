@@ -65,6 +65,7 @@
                 android:background="@drawable/bottom_line">
 
                 <ListView
+                    android:id="@+id/listView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/commentName"
