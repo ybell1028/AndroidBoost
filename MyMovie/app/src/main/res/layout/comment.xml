@@ -26,8 +26,6 @@
             android:layout_marginVertical="20dp"
             android:layout_gravity="center_horizontal"
             app:srcCompat="@drawable/user_circle" />
-
-
     </FrameLayout>
 
     <LinearLayout
@@ -42,6 +40,67 @@
             android:layout_height="wrap_content"
             android:text="ID"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/whatTimeAgo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10분전"/>
+
+            <RatingBar
+                android:id="@+id/commentRatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rating_name"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:numStars="5"
+                android:rating="5"
+                android:stepSize="0.1" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="적당히 재밌다. 오랜만에 잠 안오는 영화 봤네요."/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="추천"/>
+
+            <TextView
+                android:id="@+id/recommendNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"/>
+
+            <RatingBar
+                android:id="@+id/commentRatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rating_name"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:numStars="5"
+                android:rating="5"
+                android:stepSize="0.1" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
