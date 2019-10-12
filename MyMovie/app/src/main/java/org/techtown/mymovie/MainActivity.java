@@ -4,16 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     Button thumbUpButton, thumbDownButton;
     TextView thumbUpNum, thumbDownNum;
+
+    CommentAdapter adapter;
 
     int good = 0, bad = 0; // 좋아요 싫어요의 수
     boolean goodState = false;
@@ -61,16 +66,68 @@ public class MainActivity extends AppCompatActivity {
         thumbUpNum.setText(String.valueOf(good));
         thumbUpNum.setText(String.valueOf(bad));
 
+
+        //여기서부터 리스트 뷰 구현
         ListView listView = (ListView)findViewById(R.id.listView);
-        CommentAdapter adapter = new CommentAdapter();
-        listView.setAdapter(adapter); // 리스트 뷰가 어댑터를 알기 때문에 서로 물어보면서 화면에 표시해줌
 
+        adapter = new CommentAdapter();
+        adapter.addItem(new CommentItem(R.drawable.ic_12, "ybell1028", 30, 2, "What were they Thinking?", 100));
+        adapter.addItem(new CommentItem(R.drawable.ic_12, "ybell1028", 30, 2, "What were they Thinking?", 100));
+        adapter.addItem(new CommentItem(R.drawable.ic_12, "ybell1028", 30, 2, "What were they Thinking?", 100));
+        adapter.addItem(new CommentItem(R.drawable.ic_12, "ybell1028", 30, 2, "What were they Thinking?", 100));
+
+        listView.setAdapter(adapter);
     }
 
-    class CommentAdapter extends BaseAdapter{
+    class CommentAdapter extends BaseAdapter
+    {
+        ArrayList<CommentItem> items = new ArrayList<CommentItem>();
 
+        public void addItem(CommentItem item)
+        {
+            items.add(item);
+        }
 
+        @Override
+        public int getCount() {
+            return items.size();
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return items.get(i);
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return i;
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            CommentItemView civ = null;
+
+            if(view == null)
+            {
+                civ =  new CommentItemView(getApplicationContext());
+            }
+            else
+            {
+                civ = (CommentItemView)view;
+            }
+
+            CommentItem item = items.get(i);
+            civ.setImage(item.getResId());
+            civ.setId(item.getId());
+            civ.setTime(item.getTime());
+            civ.setRating(item.getRating());
+            civ.setComment(item.getComment());
+            civ.setRecommend(item.getRecommend());
+
+            return civ;
+        }
     }
+
 
     public void incrGood()
     {

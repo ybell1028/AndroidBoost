@@ -59,19 +59,27 @@
             <RelativeLayout
                 android:id="@+id/commentLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="400dp"
                 android:layout_below="@id/directorLayout"
                 android:paddingBottom="15dp"
                 android:background="@drawable/bottom_line">
 
-                <ListView
-                    android:id="@+id/listView"
+                <LinearLayout
+                    android:id="@+id/listLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/commentName"
-                    android:layout_above="@+id/viewAll"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp" />
+                    android:orientation="vertical">
+
+                    <ListView
+                        android:id="@+id/listView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/viewAll"
+                        android:layout_below="@+id/commentName"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"/>
+                </LinearLayout>
 
                 <Button
                     android:id="@+id/viewAll"
@@ -80,7 +88,7 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="8dp"
-                    android:layout_alignBottom="@+id/commentText"
+                    android:layout_below="@+id/listLayout"
                     android:background="@drawable/viewallborder"
                     android:text="모두 보기" />
 
@@ -115,22 +123,6 @@
                     android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/commentText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/commentName"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginEnd="0dp"
-                    android:layout_marginRight="0dp"
-                    android:text="\n\n\n\n\n\n\n\n\n\n\n"
-                    android:textColor="#000000"
-                    android:textSize="20sp" />
-
-
 
             </RelativeLayout>
 
@@ -227,12 +219,12 @@
                     android:id="@+id/story"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
                     android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
                     android:layout_marginRight="8dp"
+                    android:paddingBottom="10dp"
                     android:text="@string/story_Gundo"
-                    android:textSize="16sp"
-                    android:paddingBottom="10dp"/>
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
